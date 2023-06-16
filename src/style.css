@@ -1,1 +1,140 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Raleway:wght@400;500;600;800&family=Roboto:wght@500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Raleway", sans-serif;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  position: relative;
+  overflow-x: hidden;
+  min-width: 320px;
+  background-color: #252525;
+  color: #fff;
+}
+
+/* home-header start */
+.home-header {
+  height: 100%;
+}
+
+.logo {
+  color: #fff;
+  flex: 0 0 200px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5em;
+}
+
+.menu-button__container {
+  flex: 0 0 200px;
+  text-align: right;
+  position: relative;
+  height: 70px;
+}
+
+.menu-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  background-color: #3c3c3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+}
+.menu-button svg {
+  font-size: 25px;
+  color: #fff;
+}
+.menu-button:hover {
+  background-color: #f57500;
+}
+
+.top-line {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  background-color: #252525;
+  display: flex;
+  align-items: center;
+}
+
+.top-line__decoration {
+  flex: 1 0 0;
+  text-align: center;
+}
+.top-line__decoration::before {
+  content: "";
+  height: 1px;
+  width: 50px;
+  background-color: #fff;
+  display: inline-block;
+  opacity: 0.15;
+  position: relative;
+  top: -5px;
+}
+
+.logo-img__wrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-img__wrapper img {
+  width: 50px;
+  height: 50px;
+}
+
+.top-line__contacts {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.top-line__seperator {
+  width: 1px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0 20px;
+}
+
+.top-line__numbers {
+  color: #f57500;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.top-line__text {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* home-header end *//*# sourceMappingURL=style.css.map */
