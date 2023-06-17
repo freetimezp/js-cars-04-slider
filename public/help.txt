@@ -1,5 +1,6 @@
 https://www.youtube.com/watch?v=3PzzZ5eHHig
 https://fonts.google.com/
 https://fontawesome.com/
+https://www.npmjs.com/package/react-icons
 https://app.logo.com/
 

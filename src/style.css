@@ -28,7 +28,9 @@ body {
 
 /* home-header start */
 .home-header {
+  background-color: #252525;
   height: 100%;
+  padding-top: 70px;
 }
 
 .logo {
@@ -137,4 +139,76 @@ body {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* home-header end *//*# sourceMappingURL=style.css.map */
+/* home-header end */
+/* home-content start */
+.home-content {
+  height: 100%;
+}
+
+.home-aside {
+  background-color: #303030;
+  width: 70px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.home-aside__decoration {
+  flex: 1 0 0;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.1;
+}
+
+.home-aside__social {
+  flex: 1 0 0;
+}
+
+.home-aside__share-icon {
+  background-color: #f57500;
+  width: 70px;
+  font-size: 22px;
+  flex: 0 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.home-aside__social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid transparent;
+  margin-top: -1px;
+  transition: all 0.4s ease-in-out;
+}
+.home-aside__social-link:last-child {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.home-aside__social-link svg {
+  fill: #fff;
+  font-size: 25px;
+  opacity: 0.3;
+  transition: all 0.4s ease-in-out;
+}
+.home-aside__social-link:hover {
+  background-color: #f57500;
+  border-color: #f57500;
+}
+.home-aside__social-link:hover svg {
+  opacity: 1;
+}
+
+/* home-content end *//*# sourceMappingURL=style.css.map */
