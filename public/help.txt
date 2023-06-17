@@ -3,4 +3,6 @@ https://fonts.google.com/
 https://fontawesome.com/
 https://www.npmjs.com/package/react-icons
 https://app.logo.com/
+https://swiperjs.com/
+https://www.pexels.com/
 

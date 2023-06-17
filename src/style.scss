@@ -38,6 +38,16 @@ body {
     color: #fff;
 }
 
+#root {
+    height: 100%;
+}
+
+.App {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 /* home-header start */
 .home-header {
     background-color: $deep;
@@ -160,6 +170,7 @@ body {
 
 /* home-content start */
 .home-content {
+    width: 100%;
     height: 100%;
 }
 
@@ -215,7 +226,6 @@ body {
 
     &:last-child {
         border: 1px solid rgba(#fff, $border-opacity);
-
     }
 
     svg {
@@ -236,3 +246,104 @@ body {
 }
 
 /* home-content end */
+
+
+/* home-slider start */
+.slider-container {
+    padding-left: $size;
+    padding-top: $size;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-img {
+    height: 100%;
+    width: 75%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.slider-img__slide {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-bottom {
+    position: absolute;
+    bottom: 0;
+    height: $size;
+    display: flex;
+    align-items: center;
+    left: $size;
+    z-index: 5;
+    width: calc(75% - #{$size});
+}
+
+.slider-share {
+    flex: 0 1 auto;
+}
+
+.slider-share__items {
+    display: flex;
+    align-items: center;
+
+    .home-aside__social-item {
+        .home-aside__social-link {
+            width: $size;
+            height: $size;
+            border: none;
+            background-color: $dark;
+
+            &:hover {
+                background-color: $accent;
+                border-color: $accent;
+
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:not(:last-child) {
+            .home-aside__social-link {
+                border-right: 1px solid rgba($color: #fff, $alpha: $border-opacity);
+            }
+        }
+
+        &:is(:last-child) {
+            .home-aside__social-link {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 3px;
+                    height: 100%;
+                    background-color: $accent;
+                }
+            }
+        }
+    }
+}
+
+
+.slider-pagination {
+    flex: 0 0 140px;
+}
+
+.slider-scrollbar {
+    flex: 1 0 0;
+}
+
+.slider-navigation {
+    flex: 0 0 140px;
+}
+
+/* home-slider end */

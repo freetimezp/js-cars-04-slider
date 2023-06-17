@@ -26,6 +26,16 @@ body {
   color: #fff;
 }
 
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 /* home-header start */
 .home-header {
   background-color: #252525;
@@ -142,6 +152,7 @@ body {
 /* home-header end */
 /* home-content start */
 .home-content {
+  width: 100%;
   height: 100%;
 }
 
@@ -211,4 +222,90 @@ body {
   opacity: 1;
 }
 
-/* home-content end *//*# sourceMappingURL=style.css.map */
+/* home-content end */
+/* home-slider start */
+.slider-container {
+  padding-left: 70px;
+  padding-top: 70px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-img {
+  height: 100%;
+  width: 75%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.slider-img__slide {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.slider-bottom {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  left: 70px;
+  z-index: 5;
+  width: calc(75% - 70px);
+}
+
+.slider-share {
+  flex: 0 1 auto;
+}
+
+.slider-share__items {
+  display: flex;
+  align-items: center;
+}
+.slider-share__items .home-aside__social-item .home-aside__social-link {
+  width: 70px;
+  height: 70px;
+  border: none;
+  background-color: #303030;
+}
+.slider-share__items .home-aside__social-item .home-aside__social-link:hover {
+  background-color: #f57500;
+  border-color: #f57500;
+}
+.slider-share__items .home-aside__social-item .home-aside__social-link:hover svg {
+  opacity: 1;
+}
+.slider-share__items .home-aside__social-item:not(:last-child) .home-aside__social-link {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.slider-share__items .home-aside__social-item:is(:last-child) .home-aside__social-link {
+  position: relative;
+}
+.slider-share__items .home-aside__social-item:is(:last-child) .home-aside__social-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #f57500;
+}
+
+.slider-pagination {
+  flex: 0 0 140px;
+}
+
+.slider-scrollbar {
+  flex: 1 0 0;
+}
+
+.slider-navigation {
+  flex: 0 0 140px;
+}
+
+/* home-slider end *//*# sourceMappingURL=style.css.map */
