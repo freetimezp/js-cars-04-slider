@@ -36,6 +36,47 @@ body {
   align-items: center;
 }
 
+.button {
+  display: inline-block;
+  position: relative;
+  max-width: 200px;
+  margin-left: auto;
+  background-color: transparent;
+  color: #f57500;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 15px 30px;
+  border: 1px solid #f57500;
+  text-transform: uppercase;
+  box-shadow: 1px 3px 10px 2px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+.button span {
+  color: #f57500;
+  position: relative;
+  z-index: 2;
+  transition: all 1s ease-in-out;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+  background-color: #f57500;
+}
+.button:hover::after {
+  width: 100%;
+  color: #fff;
+}
+.button:hover span {
+  color: #fff;
+}
+
 /* home-header start */
 .home-header {
   background-color: #252525;
@@ -234,10 +275,20 @@ body {
 }
 
 .slider-img {
-  height: 100%;
+  height: calc(100% - 70px);
   width: 75%;
   overflow: hidden;
+  position: relative;
+  margin-left: unset;
+  margin-right: unset;
+}
+.slider-img::before {
+  content: "";
   position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 2;
 }
 
 .slider-img__slide {
@@ -246,6 +297,49 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.slider-text {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: calc(100% - 70px);
+}
+
+.slider-text__slide {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slider-text__content {
+  text-align: right;
+  padding-right: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.slider-text__heading {
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 120%;
+  margin-bottom: 1rem;
+}
+.slider-text__heading span {
+  color: #f57500;
+}
+
+.slider-text__desc {
+  width: 420px;
+  text-align: right;
+  display: block;
+  margin-left: auto;
+  font-family: Raleway, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 1rem;
 }
 
 .slider-bottom {
