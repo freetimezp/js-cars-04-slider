@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Mousewheel, Controller } from "swiper";
+import { EffectFade, Mousewheel, Controller, Pagination, Navigation, A11y } from "swiper";
 import "swiper/css";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import "swiper/css/effect-fade";
 
 import { AiOutlineYoutube, AiOutlineInstagram } from "react-icons/ai";
@@ -17,14 +19,14 @@ const HomeSlider = () => {
         const sliderText = sliderTextRef.current.swiper;
 
         //console.log(sliderImg);
-        console.log(sliderText);
+        //console.log(sliderText);
 
         if (sliderImg.controller && sliderText.controller) {
-            console.log('ok');
+            //console.log('ok');
             sliderImg.controller.control = sliderText;
             sliderText.controller.control = sliderImg;
         } else {
-            console.log('none');
+            //console.log('none');
         }
     }, []);
 
@@ -32,10 +34,17 @@ const HomeSlider = () => {
         <div className='slider-container'>
             <Swiper
                 ref={sliderTextRef}
-                modules={[EffectFade, Mousewheel, Controller]}
+                modules={[EffectFade, Mousewheel, Controller, Pagination, Navigation, A11y]}
                 className="slider-text"
                 speed={2400}
                 mousewheel={true}
+                navigation
+                pagination={{
+                    clickable: true,
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    dynamicBullets: true,
+                }}
                 loop={false}
             >
                 <SwiperSlide className='slider-text__slide'>
@@ -131,7 +140,9 @@ const HomeSlider = () => {
                         </div>
                     </div>
                 </div>
-                <div className="slider-pagination">222</div>
+                <div className="slider-pagination">
+                    <div className="swiper-pagination"></div>
+                </div>
                 <div className="slider-scrollbar">333</div>
                 <div className="slider-navigation">444</div>
             </div>
