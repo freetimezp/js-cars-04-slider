@@ -489,6 +489,20 @@ body {
 
 .slider-scrollbar {
     flex: 1 0 0;
+
+    .swiper-scrollbar.swiper-scrollbar-horizontal {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        max-height: 100%;
+        opacity: 1 !important;
+        background-color: rgba(#fff, 0.2);
+
+        .swiper-scrollbar-drag {
+            background-color: $accent;
+            opacity: 1 !important;
+        }
+    }
 }
 
 .slider-navigation {
