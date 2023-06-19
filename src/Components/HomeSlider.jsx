@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
+import { gsap, Power2 } from 'gsap';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Mousewheel, Controller, Pagination, A11y, Scrollbar, Navigation } from "swiper";
 import "swiper/css";
@@ -18,7 +20,6 @@ const HomeSlider = () => {
     useEffect(() => {
         const sliderImg = sliderImgRef.current.swiper;
         const sliderText = sliderTextRef.current.swiper;
-
         //console.log(sliderImg);
         //console.log(sliderText);
 
@@ -34,6 +35,18 @@ const HomeSlider = () => {
     return (
         <div className='slider-container'>
             <Swiper
+                onSlideNextTransitionStart={() => {
+                    gsap.to(document.querySelector('.slider-gear'), 2.8, {
+                        rotation: '+=35',
+                        ease: Power2.easeOut
+                    })
+                }}
+                onSlidePrevTransitionStart={() => {
+                    gsap.to(document.querySelector('.slider-gear'), 2.8, {
+                        rotation: '-=35',
+                        ease: Power2.easeOut
+                    })
+                }}
                 ref={sliderTextRef}
                 modules={[EffectFade, Mousewheel, Controller, Pagination, A11y, Scrollbar, Navigation]}
                 className="slider-text"
@@ -160,6 +173,8 @@ const HomeSlider = () => {
                     <div className="swiper-button-next"></div>
                 </div>
             </div>
+
+            <div className="slider-gear"></div>
         </div >
     );
 };
