@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Mousewheel, Controller, Pagination, Navigation, A11y, Scrollbar } from "swiper";
+import { EffectFade, Mousewheel, Controller, Pagination, A11y, Scrollbar, Navigation } from "swiper";
 import "swiper/css";
 import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
@@ -35,14 +35,18 @@ const HomeSlider = () => {
         <div className='slider-container'>
             <Swiper
                 ref={sliderTextRef}
-                modules={[EffectFade, Mousewheel, Controller, Pagination, Navigation, A11y, Scrollbar]}
+                modules={[EffectFade, Mousewheel, Controller, Pagination, A11y, Scrollbar, Navigation]}
                 className="slider-text"
                 speed={2400}
                 mousewheel={true}
-                navigation
+                navigation={{
+                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next',
+                }}
                 scrollbar={{
                     el: ".swiper-scrollbar",
                     hide: true,
+                    draggable: true,
                 }}
                 pagination={{
                     clickable: true,
@@ -151,7 +155,10 @@ const HomeSlider = () => {
                 <div className="slider-scrollbar">
                     <div className="swiper-scrollbar"></div>
                 </div>
-                <div className="slider-navigation">444</div>
+                <div className="slider-navigation">
+                    <div className="swiper-button-prev"></div>
+                    <div className="swiper-button-next"></div>
+                </div>
             </div>
         </div >
     );

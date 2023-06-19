@@ -307,7 +307,7 @@ body {
 }
 
 .slider-img {
-    height: calc(100% - #{$size});
+    height: 100%;
     width: 75%;
     overflow: hidden;
     position: relative;
@@ -501,12 +501,37 @@ body {
         .swiper-scrollbar-drag {
             background-color: $accent;
             opacity: 1 !important;
+            cursor: grab;
         }
     }
 }
 
 .slider-navigation {
     flex: 0 0 140px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 32px;
+        height: 32px;
+        color: $accent;
+        margin-top: 0;
+        border: 2px solid $accent;
+        border-radius: 50%;
+
+        &::after {
+            font-size: 10px;
+        }
+    }
+
+    .swiper-button-disabled {
+        color: rgba(#fff, 0.8);
+        border: 2px solid rgba(#fff, 0.8);
+    }
 }
 
 /* home-slider end */
