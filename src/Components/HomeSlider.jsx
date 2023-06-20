@@ -47,6 +47,37 @@ const HomeSlider = () => {
                         ease: Power2.easeOut
                     })
                 }}
+                onSlideChange={(slider) => {
+                    let curnum = document.querySelector('.slider-pagination-count .current');
+                    let pageCur = document.querySelector('.slider-pagination-current .number');
+
+                    let ind = slider.realIndex + 1;
+                    //console.log(ind);
+
+                    gsap.to(curnum, 0.2, {
+                        force3D: true,
+                        y: -10,
+                        opacity: 0,
+                        ease: Power2.easeOut,
+                        onComplete: function () {
+                            gsap.to(curnum, 0.2, {
+                                force3D: true,
+                                y: 20,
+                            })
+
+                            curnum.innerHTML = `0${ind}`;
+                            pageCur.innerHTML = `0${ind}`;
+                        }
+                    })
+                    gsap.to(curnum, 0.5, {
+                        force3D: true,
+                        y: 0,
+                        opacity: 1,
+                        delay: 0.3,
+                        ease: Power2.easeOut,
+                    })
+
+                }}
                 ref={sliderTextRef}
                 modules={[EffectFade, Mousewheel, Controller, Pagination, A11y, Scrollbar, Navigation]}
                 className="slider-text"
@@ -118,9 +149,16 @@ const HomeSlider = () => {
 
             <Swiper
                 ref={sliderImgRef}
-                modules={[EffectFade, Mousewheel, Controller]}
+                modules={[EffectFade, Mousewheel, Controller, Pagination]}
                 className="slider-img"
                 speed={2400}
+                pagination={{
+                    el: ".slider-pagination-count .total",
+                    type: "custom",
+                    renderCustom: function (swiper, current, total) {
+                        return `0${total}`
+                    }
+                }}
                 mousewheel={true}
                 loop={false}
                 effect={"fade"}
@@ -172,6 +210,14 @@ const HomeSlider = () => {
                     <div className="swiper-button-prev"></div>
                     <div className="swiper-button-next"></div>
                 </div>
+            </div>
+
+            <div className="slider-pagination-count">
+                <span className="current">01</span> / <span className="total slider-pagination-custom"></span>
+            </div>
+
+            <div className="slider-pagination-current">
+                <span className="number">01</span><span className="dot">.</span>
             </div>
 
             <div className="slider-gear"></div>

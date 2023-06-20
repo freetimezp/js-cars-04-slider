@@ -548,4 +548,39 @@ body {
     opacity: 0.05;
 }
 
+.slider-pagination-count {
+    position: absolute;
+    right: 40px;
+    top: calc(#{$size} + 50px);
+    font-family: Oswald, sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    z-index: 100;
+    width: 120px;
+    height: 68px;
+
+    .current {
+        display: inline-block;
+        font-size: 42px;
+        color: $accent;
+        min-width: 42px;
+    }
+}
+
+.slider-pagination-current {
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+    font-size: 100px;
+    line-height: 120px;
+    font-family: Oswald, sans-serif;
+    color: $deep;
+    -webkit-text-stroke: 1px #7f7f7f;
+
+    .dot {
+        color: $accent;
+        -webkit-text-stroke: 1px transparent;
+    }
+}
+
 /* home-slider end */
