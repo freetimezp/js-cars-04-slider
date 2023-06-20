@@ -584,3 +584,77 @@ body {
 }
 
 /* home-slider end */
+
+/* home-modal start */
+.modal {
+    z-index: 1000;
+    position: absolute;
+    font-family: Raleway, sans-serif;
+}
+
+.modal__container {
+    background-color: lighten($color: $deep, $amount: 6);
+    box-shadow: 0 0 0 12px rgba(#fff, 0.1);
+    border-radius: 0;
+    position: relative;
+    padding: 20px;
+    min-width: 400px;
+}
+
+.modal__title {
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Oswald, sans-serif;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+
+    span {
+        color: $accent;
+    }
+}
+
+.modal__close {
+    color: #fff;
+    opacity: 0.4;
+    font-size: 14px;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    padding: 4px 8px;
+    border: 1px solid rgba(#fff, 0.5);
+    border-radius: 50%;
+    top: 10px;
+    right: 10px;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    background-color: $dark;
+    border: none;
+    outline: none;
+    border: 1px solid lighten($color: $dark, $amount: 7);
+    padding: 15px 20px;
+    color: #fff;
+    transition: border 0.25s ease-in;
+    margin-bottom: 15px;
+
+    &::placeholder {
+        font-size: 20px;
+    }
+
+    &:focus {
+        border: 1px solid lighten($color: $dark, $amount: 25);
+    }
+}
+
+.modal__footer {
+    text-align: center;
+}
+
+/* home-modal end */

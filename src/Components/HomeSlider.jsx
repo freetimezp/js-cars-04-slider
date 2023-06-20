@@ -10,12 +10,18 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "swiper/css/effect-fade";
 
+import MicroModal from 'micromodal';
+import '../css/micromodal.css';
+import HomeModal from './HomeModal';
+
 import { AiOutlineYoutube, AiOutlineInstagram } from "react-icons/ai";
 import { FaFacebookF } from 'react-icons/fa';
 
 const HomeSlider = () => {
     const sliderImgRef = useRef(null);
     const sliderTextRef = useRef(null);
+
+
 
     useEffect(() => {
         const sliderImg = sliderImgRef.current.swiper;
@@ -110,7 +116,18 @@ const HomeSlider = () => {
                             Dolore ipsam vitae ea distinctio nostrum illum quia dolor
                             pariatur sapiente similique.
                         </p>
-                        <button className="button slider-text__button">
+                        <button
+                            className="button slider-text__button"
+                            data-micromodal-open="modal-1"
+                            onClick={() => MicroModal.show("modal-1", {
+                                openTrigger: 'data-micromodal-open',
+                                closeTrigger: 'data-micromodal-close',
+                                disableFocus: true,
+                                disableScroll: true,
+                                awaitOpenAnimation: true,
+                                awaitCloseAnimation: true,
+                            })}
+                        >
                             <span>Contact Us</span>
                         </button>
                     </div>
@@ -125,7 +142,11 @@ const HomeSlider = () => {
                             Dolore ipsam vitae ea distinctio nostrum illum quia dolor
                             pariatur sapiente similique.
                         </p>
-                        <button className="button slider-text__button">
+                        <button
+                            className="button slider-text__button"
+                            data-micromodal-open="modal-1"
+                            onClick={() => MicroModal.show("modal-1")}
+                        >
                             <span>Contact Us</span>
                         </button>
                     </div>
@@ -140,7 +161,11 @@ const HomeSlider = () => {
                             Dolore ipsam vitae ea distinctio nostrum illum quia dolor
                             pariatur sapiente similique.
                         </p>
-                        <button className="button slider-text__button">
+                        <button
+                            className="button slider-text__button"
+                            data-micromodal-open="modal-1"
+                            onClick={() => MicroModal.show("modal-1")}
+                        >
                             <span>Contact Us</span>
                         </button>
                     </div>
@@ -219,6 +244,8 @@ const HomeSlider = () => {
             <div className="slider-pagination-current">
                 <span className="number">01</span><span className="dot">.</span>
             </div>
+
+            <HomeModal />
 
             <div className="slider-gear"></div>
         </div >
