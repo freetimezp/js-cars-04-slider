@@ -21,8 +21,6 @@ const HomeSlider = () => {
     const sliderImgRef = useRef(null);
     const sliderTextRef = useRef(null);
 
-
-
     useEffect(() => {
         const sliderImg = sliderImgRef.current.swiper;
         const sliderText = sliderTextRef.current.swiper;
